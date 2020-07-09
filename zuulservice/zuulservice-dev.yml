@@ -1,0 +1,7 @@
+##### zuul role config
+zuul:
+  routes: # organizationservice和licensingservice分别映射到organization和licensing
+    organizationservice: /organization/**
+    licensingservice: /licensing/**
+  ignored-services: '*' # 排除所有基于Eureka服务ID的路由的注册
+  prefix: /api   # 所有已定义的服务都将添加前缀/api。例如 http://localhost:5555/api/organization/**
